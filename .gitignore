@@ -1,0 +1,9 @@
+.env
+node_modules/
+.browsers/
+tools/github-cli/
+tools/social-automation/bin/
+tools/social-automation/logs/
+tools/social-automation/*.lock
+posts/*/07-publish/media/
+_site/

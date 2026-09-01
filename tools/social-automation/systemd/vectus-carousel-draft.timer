@@ -1,0 +1,12 @@
+[Unit]
+Description=Generate Vectus Lern carousel drafts twice daily
+
+[Timer]
+OnCalendar=*-*-* 09:00:00 Europe/Vienna
+OnCalendar=*-*-* 18:00:00 Europe/Vienna
+Persistent=true
+RandomizedDelaySec=2m
+Unit=vectus-carousel-draft.service
+
+[Install]
+WantedBy=timers.target

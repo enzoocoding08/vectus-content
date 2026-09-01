@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "durationSeconds": 0,
+  "template": "brain-hack",
+  "scenes": [
+    {
+      "id": "scene-001",
+      "beat": "HOOK",
+      "start": 0,
+      "end": 1.8,
+      "type": "broll",
+      "asset": "../03-assets/stock/stock-01-example.mp4",
+      "sourceIn": 0,
+      "sourceOut": 1.8,
+      "fit": "cover",
+      "focus": { "x": 0.5, "y": 0.5 },
+      "zoom": { "from": 1, "to": 1.03 },
+      "caption": "Hook goes here",
+      "transitionIn": "none",
+      "transitionOut": "hard-cut"
+    }
+  ],
+  "audio": {
+    "voice": "../04-audio/voice/voice-v01.wav",
+    "music": "../04-audio/music/music-01.wav",
+    "musicGainDb": -24,
+    "duckUnderVoice": true
+  }
+}
+

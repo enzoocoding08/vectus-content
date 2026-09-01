@@ -1,0 +1,17 @@
+{
+  "id": "YYYY-MM-DD-short-slug",
+  "title": "",
+  "status": "idea",
+  "template": "brain-hack",
+  "platforms": ["instagram"],
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "language": "de",
+  "createdAt": "YYYY-MM-DD",
+  "publishedAt": null,
+  "contentPillar": "learning-aha",
+  "hook": "",
+  "cta": "",
+  "owners": [],
+  "notes": ""
+}
+

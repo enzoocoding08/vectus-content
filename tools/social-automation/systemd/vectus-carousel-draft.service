@@ -1,0 +1,8 @@
+[Unit]
+Description=Generate one reviewed Vectus Lern Instagram carousel draft
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/lorenz-parzer/Documents/Account
+ExecStart=/home/lorenz-parzer/Documents/Account/tools/social-automation/run-draft.sh
+Nice=10

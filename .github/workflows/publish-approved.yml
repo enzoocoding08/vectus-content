@@ -1,0 +1,66 @@
+name: Publish approved carousel
+
+on:
+  workflow_dispatch:
+    inputs:
+      post_path:
+        description: "Reviewed post folder, e.g. posts/2026-09-01-topic"
+        required: true
+        type: string
+
+concurrency:
+  group: instagram-publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      post_id: ${{ steps.meta.outputs.post_id }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Validate reviewed carousel
+        run: node tools/social-automation/validate-post.mjs "${{ inputs.post_path }}"
+      - name: Stage public JPEG files
+        run: node tools/social-automation/stage-pages.mjs "${{ inputs.post_path }}"
+      - id: meta
+        run: echo "post_id=$(basename '${{ inputs.post_path }}')" >> "$GITHUB_OUTPUT"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: prepare
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - id: pages
+        uses: actions/deploy-pages@v4
+
+  publish:
+    needs: [prepare, deploy]
+    runs-on: ubuntu-latest
+    environment: instagram-production
+    steps:
+      - uses: actions/checkout@v6
+      - name: Publish after manual workflow approval
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          INSTAGRAM_API_VERSION: v23.0
+          MEDIA_BASE_URL: ${{ needs.deploy.outputs.page_url }}media/${{ needs.prepare.outputs.post_id }}
+          REVIEW_APPROVED: "true"
+        run: node tools/social-automation/instagram-publish.mjs "${{ inputs.post_path }}" --pages

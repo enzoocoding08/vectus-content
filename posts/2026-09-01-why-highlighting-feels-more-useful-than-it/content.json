@@ -1,0 +1,90 @@
+{
+  "title": "Why highlighting feels more useful than it is",
+  "hook": "Stop confusing feeling smart with actually learning.",
+  "cta": "Save this for your next study session.",
+  "contentPillar": "learning-aha",
+  "slides": [
+    {
+      "type": "cover",
+      "label": "Slide 1",
+      "title": "Why Highlighting Feels Useful",
+      "accent": "Quick study fix",
+      "body": "It gives instant fluency and focus—but often not deeper learning.",
+      "callout": "Feels helpful, not always helpful",
+      "footer": "",
+      "bullets": [],
+      "color": "#ff4da6"
+    },
+    {
+      "type": "plain",
+      "label": "Slide 2",
+      "title": "The fluency illusion",
+      "accent": "",
+      "body": "Seeing highlighted text increases familiarity; familiarity is mistaken for mastery.",
+      "callout": "Familiarity ≠ mastery",
+      "footer": "",
+      "bullets": [],
+      "color": "#ffd83d"
+    },
+    {
+      "type": "plain",
+      "label": "Slide 3",
+      "title": "Recognition vs. recall",
+      "accent": "",
+      "body": "Highlighting supports recognition—later you recognize lines, but you can't produce the idea from memory.",
+      "callout": "Recall builds durable knowledge",
+      "footer": "",
+      "bullets": [],
+      "color": "#37f28a"
+    },
+    {
+      "type": "plain",
+      "label": "Slide 4",
+      "title": "Selective attention trap",
+      "accent": "",
+      "body": "We tend to highlight vivid phrases or examples, not the underlying principle or how to use it.",
+      "callout": "Highlight what matters",
+      "footer": "",
+      "bullets": [],
+      "color": "#ffd83d"
+    },
+    {
+      "type": "plain",
+      "label": "Slide 5",
+      "title": "Highlights become decorations",
+      "accent": "",
+      "body": "Without testing, highlights turn into passive ornaments you reread instead of retrieving information.",
+      "callout": "Rereading is passive",
+      "footer": "",
+      "bullets": [],
+      "color": "#ff4da6"
+    },
+    {
+      "type": "plain",
+      "label": "Slide 6",
+      "title": "Make highlights into cues",
+      "accent": "",
+      "body": "Highlight one line per idea; write a short question in the margin; later cover text and answer from memory.",
+      "callout": "Convert highlights to tests",
+      "footer": "",
+      "bullets": [
+        "Highlight only main idea",
+        "Write a retrieval question",
+        "Self-test, then spaced review"
+      ],
+      "color": "#37f28a"
+    },
+    {
+      "type": "final",
+      "label": "Slide 7",
+      "title": "Takeaway: Use highlights smartly",
+      "accent": "",
+      "body": "Highlights feel useful because they increase fluency. To learn, turn them into retrieval cues and practice active recall with spacing.",
+      "callout": "Turn fluency into mastery",
+      "footer": "Discuss: How will you change your highlighting?",
+      "bullets": [],
+      "color": "#ffd83d"
+    }
+  ],
+  "caption": "Highlighting boosts fluency, not always learning. Use one-line highlights, write a margin question, then self-test and space reviews. Save this post and try it next study session. Share your change below. #studyhacks #learning #activelearning #spacedrepetition #metacognition #students #VectusLern AI-assisted content. Reviewed by Vectus Lern."
+}

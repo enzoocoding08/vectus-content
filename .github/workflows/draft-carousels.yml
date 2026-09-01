@@ -24,10 +24,10 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 22
-      - name: Install FFmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
           cache: npm
           cache-dependency-path: tools/content-renderer/package-lock.json
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - run: npm ci
         working-directory: tools/content-renderer
       - name: Install Chromium

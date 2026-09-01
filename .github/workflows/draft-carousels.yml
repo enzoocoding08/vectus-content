@@ -1,0 +1,48 @@
+name: Create carousel drafts
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 9 * * *"
+      timezone: "Europe/Vienna"
+    - cron: "0 18 * * *"
+      timezone: "Europe/Vienna"
+
+concurrency:
+  group: vectus-draft
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: tools/content-renderer/package-lock.json
+      - run: npm ci
+        working-directory: tools/content-renderer
+      - name: Install Chromium
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/tools/content-renderer/.browsers
+        run: npx playwright install --with-deps chromium
+        working-directory: tools/content-renderer
+      - name: Create, render, and validate draft
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-5-mini
+          PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/tools/content-renderer/.browsers
+        run: node tools/social-automation/cloud-draft.mjs
+      - name: Commit review draft
+        run: |
+          git config user.name "vectus-content-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add posts tools/social-automation/history.json tools/social-automation/queue.json
+          git commit -m "draft: add scheduled carousel"
+          git push

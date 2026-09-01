@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -64,3 +64,10 @@ jobs:
           MEDIA_BASE_URL: ${{ needs.deploy.outputs.page_url }}media/${{ needs.prepare.outputs.post_id }}
           REVIEW_APPROVED: "true"
         run: node tools/social-automation/instagram-publish.mjs "${{ inputs.post_path }}" --pages
+      - name: Record published status
+        run: |
+          git config user.name "vectus-content-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add "${{ inputs.post_path }}/post.json" "${{ inputs.post_path }}/07-publish/publish-result.json" tools/social-automation/queue.json
+          git commit -m "publish: record Instagram result"
+          git push

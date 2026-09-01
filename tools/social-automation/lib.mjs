@@ -1,5 +1,5 @@
 import { readFile, writeFile } from "node:fs/promises";
-import { resolve } from "node:path";
+import { isAbsolute, resolve } from "node:path";
 
 export const root = resolve(new URL("../..", import.meta.url).pathname);
 
@@ -23,6 +23,7 @@ export async function loadEnv() {
 }
 
 export function postPath(value) {
+  if (isAbsolute(value)) return resolve(value);
   return resolve(root, value.startsWith("posts/") ? value : `posts/${value}`);
 }
 

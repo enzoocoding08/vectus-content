@@ -13,8 +13,10 @@
       "postPath": "posts/2026-09-01-mix-practice-problems",
       "topic": "How mixing related problem types improves method selection",
       "createdAt": "2026-09-01T20:17:47+02:00",
-      "status": "approved",
-      "approvedAt": "2026-09-02T10:29:47.924Z"
+      "status": "published",
+      "approvedAt": "2026-09-02T10:29:47.924Z",
+      "publishedAt": "2026-09-02T10:54:54+0000",
+      "permalink": "https://www.instagram.com/p/DcyEdDYoKVI/"
     },
     {
       "postPath": "posts/2026-09-01-why-highlighting-feels-more-useful-than-it",

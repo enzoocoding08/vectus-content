@@ -1,7 +1,7 @@
 {
   "id": "2026-09-01-mix-practice-problems",
   "title": "Stop Practising One Type at a Time",
-  "status": "approved",
+  "status": "published",
   "template": "vectus-carousel",
   "platforms": [
     "instagram"
@@ -12,11 +12,13 @@
   },
   "language": "en",
   "createdAt": "2026-09-01",
-  "publishedAt": null,
+  "publishedAt": "2026-09-02T10:54:54+0000",
   "contentPillar": "learning-aha",
   "hook": "Repeating one problem type feels efficient. It may be teaching you to follow a pattern, not choose a method.",
   "cta": "Save this mixed-practice recipe for your next problem set.",
   "owners": [],
   "notes": "Seven-slide English carousel. Human review required before publishing.",
-  "approvedAt": "2026-09-02T10:29:47.924Z"
+  "approvedAt": "2026-09-02T10:29:47.924Z",
+  "instagramMediaId": "18110249498280985",
+  "instagramPermalink": "https://www.instagram.com/p/DcyEdDYoKVI/"
 }

@@ -4,6 +4,10 @@ Stand: 25.08.2026, Europe/Vienna
 
 Diese Datei bewahrt den handlungsrelevanten Kontext des bisherigen Chats. Vor der Content-Produktion vollständig lesen. Die ausführliche Video- und Pipeline-Spezifikation steht in VIDEO_PIPELINE_CONTEXT.md.
 
+## Verbindlicher Instagram-Standard
+
+Vor jeder Planung, Erstellung, Bearbeitung, Freigabe oder Veröffentlichung eines Social-Media-Posts muss `instagram_growth_content_system.md` vollständig gelesen werden. Diese Datei ist der verbindliche Standard für Instagram-Strategie, Aufbau, Gestaltung, Captions, Qualitätskontrolle und Publishing. Das gilt ausdrücklich auch für jeden neuen Chat und jede automatisierte Post-Erstellung; nicht aus Erinnerung oder ausschließlich aus älteren Templates arbeiten.
+
 ## Ziel und Positionierung
 
 Aufgebaut wird ein faceless Social-Media-Account für die Lern-App **Vectus Lern**, zuerst Instagram Reels, später TikTok und YouTube Shorts. Der Account soll gleichzeitig nützlichen Lerncontent und Produktwachstum liefern. Schüler und Studierende sind der Kern; Productivity-, Brain-Hacking- und Biohacking-Interessierte werden über Hooks und Kognitionswissenschaft mit angesprochen.

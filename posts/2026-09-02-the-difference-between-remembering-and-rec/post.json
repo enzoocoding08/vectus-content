@@ -1,7 +1,7 @@
 {
   "id": "2026-09-02-the-difference-between-remembering-and-rec",
   "title": "Remembering vs Recognizing",
-  "status": "draft",
+  "status": "approved",
   "template": "vectus-carousel",
   "platforms": [
     "instagram"
@@ -17,5 +17,6 @@
   "hook": "Learn the crucial difference that changes how you study.",
   "cta": "Try a 10-minute recall after this carousel",
   "owners": [],
-  "notes": "Generated automatically. Human review required before publishing."
+  "notes": "Generated automatically. Human review required before publishing.",
+  "approvedAt": "2026-09-02T10:55:29.955Z"
 }

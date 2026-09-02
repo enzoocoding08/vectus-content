@@ -30,6 +30,13 @@
       "postPath": "posts/2026-09-02-the-difference-between-remembering-and-rec",
       "topic": "The difference between remembering and recognizing",
       "createdAt": "2026-09-02T07:17:24.340Z",
+      "status": "approved",
+      "approvedAt": "2026-09-02T10:55:29.955Z"
+    },
+    {
+      "postPath": "posts/2026-09-02-guess-before-you-study",
+      "topic": "Why guessing before studying can improve later learning",
+      "createdAt": "2026-09-02T18:15:08+02:00",
       "status": "awaiting_review"
     },
     {

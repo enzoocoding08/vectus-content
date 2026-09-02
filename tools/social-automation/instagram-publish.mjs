@@ -54,8 +54,18 @@ async function publish(publicBase) {
   const childIds = [];
   for (const slide of slides) {
     const imageUrl = publicBase.replace(/\/$/, "") + "/" + slide.replace(/\.png$/, ".jpg");
-    const check = await fetch(imageUrl, { method: "HEAD" });
-    if (!check.ok) throw new Error("Public media check failed: " + imageUrl);
+    let publicReady = false;
+    for (let attempt = 0; attempt < 12; attempt += 1) {
+      try {
+        const check = await fetch(imageUrl, { method: "HEAD" });
+        if (check.ok) {
+          publicReady = true;
+          break;
+        }
+      } catch {}
+      await new Promise((resolveWait) => setTimeout(resolveWait, 2_500));
+    }
+    if (!publicReady) throw new Error("Public media check failed: " + imageUrl);
     const body = new URLSearchParams({ image_url: imageUrl, is_carousel_item: "true" });
     const child = await graph(env.INSTAGRAM_USER_ID + "/media", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
     childIds.push(child.id);

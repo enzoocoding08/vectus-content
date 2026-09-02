@@ -22,9 +22,11 @@ if (!dryRun && !pagesMode) await access(join(publishDir, "APPROVED"));
 if (!/AI-assisted content\. Reviewed by Vectus Lern\./i.test(caption)) throw new Error("Refusing to publish without the required AI-assisted disclosure");
 const slides = (await readdir(finalDir)).filter((name) => /^slide-\d+\.png$/.test(name)).sort();
 if (slides.length < 2 || slides.length > 10) throw new Error("Instagram carousel requires 2-10 slides; found " + slides.length);
-await mkdir(mediaDir, { recursive: true });
-for (const slide of slides) {
-  execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-i", join(finalDir, slide), "-q:v", "2", "-pix_fmt", "yuvj420p", "-y", join(mediaDir, slide.replace(/\.png$/, ".jpg"))]);
+if (!pagesMode) {
+  await mkdir(mediaDir, { recursive: true });
+  for (const slide of slides) {
+    execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-i", join(finalDir, slide), "-q:v", "2", "-pix_fmt", "yuvj420p", "-y", join(mediaDir, slide.replace(/\.png$/, ".jpg"))]);
+  }
 }
 if (dryRun) {
   console.log(JSON.stringify({ ready: true, approved: false, post: metadata.id, slides: slides.length, captionCharacters: caption.length }, null, 2));

@@ -1,0 +1,86 @@
+{
+  "title": "Why easy studying creates weak memory",
+  "hook": "Feeling fluent after rereading? That ease often lies.",
+  "cta": "Save this and try one change today",
+  "contentPillar": "learning-aha",
+  "slides": [
+    {
+      "type": "cover",
+      "label": "1/7",
+      "title": "Why 'Easy' Study Fails Memory",
+      "accent": "#ff4da6",
+      "body": "Fluency after rereading or cramming masks weak, short‑lived memory. Effortful retrieval makes learning stick.",
+      "callout": "Make practice harder",
+      "footer": "",
+      "bullets": [],
+      "color": "#ff4da6"
+    },
+    {
+      "type": "plain",
+      "label": "2/7",
+      "title": "Fluency is a familiarity trick",
+      "accent": "#ffd83d",
+      "body": "Rereading boosts processing ease but not recall strength. Familiarity feels like knowing but fails when you must produce answers.",
+      "callout": "Don't trust fluency",
+      "footer": "",
+      "bullets": [],
+      "color": "#ffd83d"
+    },
+    {
+      "type": "plain",
+      "label": "3/7",
+      "title": "Retrieval beats re-exposure",
+      "accent": "#37f28a",
+      "body": "Actively trying to recall information strengthens memory traces far more than passive re‑exposure does.",
+      "callout": "Test actively",
+      "footer": "",
+      "bullets": [],
+      "color": "#37f28a"
+    },
+    {
+      "type": "plain",
+      "label": "4/7",
+      "title": "Cramming gives short gains",
+      "accent": "#ff4da6",
+      "body": "Massed practice inflates session performance but causes rapid forgetting. Spacing forces retrieval across time and improves retention.",
+      "callout": "Space sessions",
+      "footer": "",
+      "bullets": [],
+      "color": "#ff4da6"
+    },
+    {
+      "type": "plain",
+      "label": "5/7",
+      "title": "Context limits future cues",
+      "accent": "#ffd83d",
+      "body": "Studying in only one format ties memory to that context. Use different prompts and formats to broaden retrieval cues.",
+      "callout": "Vary prompts",
+      "footer": "",
+      "bullets": [],
+      "color": "#ffd83d"
+    },
+    {
+      "type": "plain",
+      "label": "6/7",
+      "title": "Aim for desirable difficulty",
+      "accent": "#37f28a",
+      "body": "Make practice slightly challenging but attainable: closed‑book recall, short summaries, or brief self‑quizzes before checking answers.",
+      "callout": "Just hard enough",
+      "footer": "",
+      "bullets": [],
+      "color": "#37f28a"
+    },
+    {
+      "type": "final",
+      "label": "7/7",
+      "title": "Memorable Takeaway",
+      "accent": "#ff4da6",
+      "body": "Easy studying feels productive but builds fragile memory. Prioritize spaced, effortful retrieval with corrective feedback. What's one study habit you'll change?",
+      "callout": "Share one change below",
+      "footer": "Save this for your next study session",
+      "bullets": [],
+      "color": "#ff4da6"
+    }
+  ],
+  "caption": "Quick practical checklist:\n• Replace one reread with a closed‑book recall.\n• Space that recall across days.\n• Add a brief self‑test before checking answers.\nWhich will you try this week? Comment below and save for later.\n#VectusLern #studyhacks #retrievalpractice #spacedpractice #studybetter #cognitivescience #students #learning\nAI-assisted content. Reviewed by Vectus Lern."
+}

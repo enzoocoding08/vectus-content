@@ -16,4 +16,4 @@ Keep the following invariants:
 - Every post lives in its own `posts/YYYY-MM-DD-short-slug/` directory, copied from `posts/_template/`.
 - Standard output is vertical 9:16, 1080x1920.
 - Keep costs low and the pipeline local-first; do not introduce a paid video API as a core dependency without an explicit decision.
-- Preserve human review for hooks, scripts, asset selection, and final renders until the formats have been validated.
+- Preserve human review for reels and unvalidated formats. The validated Instagram carousel workflow is explicitly authorized for automatic creation, approval, and publishing at 09:00 and 18:00 Europe/Vienna without user action; all automated posts must first pass the repository validator and the binding growth-system requirements.

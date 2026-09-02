@@ -1,10 +1,11 @@
-import { cp, mkdir, readFile, writeFile } from "node:fs/promises";
+import { appendFile, cp, mkdir, readFile, writeFile } from "node:fs/promises";
 import { execFileSync } from "node:child_process";
 import { resolve } from "node:path";
 import { readJson, root } from "./lib.mjs";
 
 if (!process.env.OPENAI_API_KEY) throw new Error("Missing OPENAI_API_KEY");
 const config = await readJson(resolve(root, "tools/social-automation/config.json"));
+const growthSystem = await readFile(resolve(root, "instagram_growth_content_system.md"), "utf8");
 const topics = await readJson(resolve(root, "tools/social-automation/topics.json"));
 const historyPath = resolve(root, "tools/social-automation/history.json");
 const queuePath = resolve(root, "tools/social-automation/queue.json");
@@ -53,6 +54,7 @@ const schema = {
   }
 };
 const instructions = [
+  "Follow this binding Instagram growth and content system in full:\n\n" + growthSystem,
   "Create a save-worthy English Instagram carousel for Vectus Lern, a modern learning-science account for students.",
   "Use 6 to 8 concise slides about the supplied topic.",
   "Be direct, practical, specific, evidence-aligned, and easy to understand.",
@@ -98,3 +100,4 @@ queue.drafts.push({ postPath: "posts/" + id, topic, createdAt: now, status: "awa
 await writeFile(historyPath, JSON.stringify(history, null, 2) + "\n");
 await writeFile(queuePath, JSON.stringify(queue, null, 2) + "\n");
 console.log(JSON.stringify({ postPath: "posts/" + id, topic, status: "awaiting_review" }));
+if (process.env.GITHUB_OUTPUT) await appendFile(process.env.GITHUB_OUTPUT, "post_path=posts/" + id + "\n");

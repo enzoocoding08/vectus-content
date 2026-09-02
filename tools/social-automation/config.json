@@ -3,7 +3,7 @@
   "draftTimes": ["09:00", "18:00"],
   "language": "en",
   "slides": { "min": 6, "max": 8 },
-  "reviewRequired": true,
+  "reviewRequired": false,
   "aiDisclosure": "AI-assisted content. Reviewed by Vectus Lern.",
   "account": "vectuslearn"
 }

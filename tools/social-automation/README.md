@@ -1,8 +1,8 @@
 # Vectus social automation
 
-The scheduler creates drafts at 09:00 and 18:00 Europe/Vienna. It never publishes an unreviewed post.
+The cloud scheduler runs the full carousel autopilot at 09:00 and 18:00 Europe/Vienna. Each run reads the binding growth system, creates and renders one new carousel, validates and automatically approves it, then publishes the oldest approved carousel with its complete caption.
 
-## Review and publish
+## Manual review and publish
 
 1. Review the PNGs and `caption.txt` in the post's `06-renders/final/` directory.
 2. Validate: `node tools/social-automation/validate-post.mjs posts/YYYY-MM-DD-slug`
@@ -18,3 +18,7 @@ The documented Instagram publishing API does not expose a reliable native AI-lab
 `AI-assisted content. Reviewed by Vectus Lern.`
 
 The validator and publisher reject missing disclosure.
+
+## Autopilot
+
+The scheduled workflow requires no user action. A post is eligible for automatic publishing only after the renderer and validator complete successfully. Failed creation, validation, media staging, or Meta API verification stops the workflow rather than publishing incomplete content.

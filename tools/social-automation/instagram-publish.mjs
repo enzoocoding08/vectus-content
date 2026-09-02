@@ -106,8 +106,9 @@ if (pagesMode) {
     const publicBase = await new Promise((resolveUrl, reject) => {
       const timer = setTimeout(() => reject(new Error("Timed out waiting for Cloudflare tunnel URL")), 30_000);
       const inspect = (chunk) => {
-        const match = chunk.toString().match(/https:\/\/[a-z0-9-]+\.trycloudflare\.com/);
-        if (match) { clearTimeout(timer); resolveUrl(match[0]); }
+        const matches = chunk.toString().matchAll(/https:\/\/[a-z0-9-]+\.trycloudflare\.com/g);
+        const tunnelUrl = Array.from(matches, (match) => match[0]).find((url) => !url.includes("api.trycloudflare.com"));
+        if (tunnelUrl) { clearTimeout(timer); resolveUrl(tunnelUrl); }
       };
       tunnel.stdout.on("data", inspect); tunnel.stderr.on("data", inspect);
       tunnel.on("exit", (code) => reject(new Error("cloudflared exited before startup (" + code + ")")));

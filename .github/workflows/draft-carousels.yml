@@ -1,4 +1,4 @@
-name: Create carousel drafts
+name: Create and publish carousel
 
 on:
   workflow_dispatch:
@@ -9,18 +9,25 @@ on:
       timezone: "Europe/Vienna"
 
 concurrency:
-  group: vectus-draft
+  group: vectus-carousel-autopilot
   cancel-in-progress: false
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   create:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
+    outputs:
+      post_path: ${{ steps.target.outputs.post_path }}
+      post_id: ${{ steps.meta.outputs.post_id }}
     steps:
       - uses: actions/checkout@v6
+        with:
+          ref: main
       - uses: actions/setup-node@v6
         with:
           node-version: 22
@@ -35,16 +42,67 @@ jobs:
           PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/tools/content-renderer/.browsers
         run: npx playwright install --with-deps chromium
         working-directory: tools/content-renderer
-      - name: Create, render, and validate draft
+      - id: generated
+        name: Create, render, and validate new carousel
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: gpt-5-mini
           PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/tools/content-renderer/.browsers
         run: node tools/social-automation/cloud-draft.mjs
-      - name: Commit review draft
+      - name: Automatically approve validated carousel
+        run: node tools/social-automation/approve.mjs "${{ steps.generated.outputs.post_path }}"
+      - id: target
+        name: Select oldest approved carousel for publishing
+        run: node tools/social-automation/next-publish.mjs
+      - name: Commit generated and approved carousel
         run: |
           git config user.name "vectus-content-bot"
           git config user.email "actions@users.noreply.github.com"
           git add posts tools/social-automation/history.json tools/social-automation/queue.json
-          git commit -m "draft: add scheduled carousel"
+          git commit -m "autopilot: create and approve scheduled carousel"
+          git push
+      - name: Stage selected carousel for Instagram
+        run: node tools/social-automation/stage-pages.mjs "${{ steps.target.outputs.post_path }}"
+      - id: meta
+        run: echo "post_id=$(basename '${{ steps.target.outputs.post_path }}')" >> "$GITHUB_OUTPUT"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: create
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - id: pages
+        uses: actions/deploy-pages@v4
+
+  publish:
+    needs: [create, deploy]
+    runs-on: ubuntu-latest
+    environment: instagram-production
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - name: Publish selected carousel to Instagram
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          INSTAGRAM_API_VERSION: v23.0
+          MEDIA_BASE_URL: ${{ needs.deploy.outputs.page_url }}media/${{ needs.create.outputs.post_id }}
+          REVIEW_APPROVED: "true"
+        run: node tools/social-automation/instagram-publish.mjs "${{ needs.create.outputs.post_path }}" --pages
+      - name: Record published status
+        run: |
+          git config user.name "vectus-content-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main
+          git add "${{ needs.create.outputs.post_path }}/post.json" "${{ needs.create.outputs.post_path }}/07-publish/publish-result.json" tools/social-automation/queue.json
+          git commit -m "autopilot: record Instagram publication"
           git push

@@ -8,6 +8,8 @@ Diese Datei bewahrt den handlungsrelevanten Kontext des bisherigen Chats. Vor de
 
 Vor jeder Planung, Erstellung, Bearbeitung, Freigabe oder Veröffentlichung eines Social-Media-Posts muss `instagram_growth_content_system.md` vollständig gelesen werden. Diese Datei ist der verbindliche Standard für Instagram-Strategie, Aufbau, Gestaltung, Captions, Qualitätskontrolle und Publishing. Das gilt ausdrücklich auch für jeden neuen Chat und jede automatisierte Post-Erstellung; nicht aus Erinnerung oder ausschließlich aus älteren Templates arbeiten.
 
+Der Nutzer hat am 02.09.2026 den validierten Instagram-Carousel-Workflow ausdrücklich auf Vollautomatik umgestellt. Geplante Cloud-Läufe um 09:00 und 18:00 Europe/Vienna dürfen nach erfolgreichem Rendering und technischer Validierung ohne weitere Nutzerfreigabe automatisch genehmigen und veröffentlichen. Reels und noch nicht validierte Formate behalten menschliche Prüfung.
+
 ## Ziel und Positionierung
 
 Aufgebaut wird ein faceless Social-Media-Account für die Lern-App **Vectus Lern**, zuerst Instagram Reels, später TikTok und YouTube Shorts. Der Account soll gleichzeitig nützlichen Lerncontent und Produktwachstum liefern. Schüler und Studierende sind der Kern; Productivity-, Brain-Hacking- und Biohacking-Interessierte werden über Hooks und Kognitionswissenschaft mit angesprochen.

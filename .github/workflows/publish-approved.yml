@@ -27,8 +27,6 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 22
-      - name: Install FFmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: Validate reviewed carousel
         run: node tools/social-automation/validate-post.mjs "${{ inputs.post_path }}"
       - name: Stage public JPEG files

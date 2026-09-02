@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { mkdir, readdir, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readdir, writeFile } from "node:fs/promises";
 import { basename, resolve } from "node:path";
 import { postPath, root } from "./lib.mjs";
 
@@ -8,11 +8,20 @@ if (!target) throw new Error("Usage: node stage-pages.mjs <post-folder>");
 const post = postPath(target);
 const id = basename(post);
 const source = resolve(post, "06-renders/final");
+const prepared = resolve(post, "07-publish/media");
 const destination = resolve(root, "_site/media", id);
 await mkdir(destination, { recursive: true });
 const slides = (await readdir(source)).filter((name) => /^slide-\d+\.png$/.test(name)).sort();
-for (const slide of slides) {
-  execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-i", resolve(source, slide), "-q:v", "2", "-pix_fmt", "yuvj420p", "-y", resolve(destination, slide.replace(".png", ".jpg"))]);
+let preparedSlides = [];
+try {
+  preparedSlides = (await readdir(prepared)).filter((name) => /^slide-\d+\.jpg$/.test(name)).sort();
+} catch {}
+if (preparedSlides.length === slides.length) {
+  for (const slide of preparedSlides) await copyFile(resolve(prepared, slide), resolve(destination, slide));
+} else {
+  for (const slide of slides) {
+    execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-i", resolve(source, slide), "-q:v", "2", "-pix_fmt", "yuvj420p", "-y", resolve(destination, slide.replace(".png", ".jpg"))]);
+  }
 }
 await writeFile(resolve(root, "_site/.nojekyll"), "");
 await writeFile(resolve(root, "_site/index.html"), "<!doctype html><title>Vectus media</title><meta name=\"robots\" content=\"noindex\">");

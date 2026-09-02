@@ -1,0 +1,91 @@
+{
+  "title": "Remembering vs Recognizing",
+  "hook": "Learn the crucial difference that changes how you study.",
+  "cta": "Try a 10-minute recall after this carousel",
+  "contentPillar": "learning-aha",
+  "slides": [
+    {
+      "type": "cover",
+      "label": "Cover",
+      "title": "Remembering vs Recognizing",
+      "accent": "bold",
+      "body": "One lets you reproduce knowledge; the other tells you it seems familiar. Which matters for real skills?",
+      "callout": "Which helps you actually use knowledge?",
+      "footer": "",
+      "bullets": [],
+      "color": "#ffd83d"
+    },
+    {
+      "type": "plain",
+      "label": "Slide 2",
+      "title": "What is remembering?",
+      "accent": "plain",
+      "body": "Active retrieval of facts or steps without cues. You reconstruct answers from memory.",
+      "callout": "Also: generative practice",
+      "footer": "",
+      "bullets": [],
+      "color": "#ff4da6"
+    },
+    {
+      "type": "plain",
+      "label": "Slide 3",
+      "title": "What is recognizing?",
+      "accent": "plain",
+      "body": "Identifying correct information when it's presented. Often based on familiarity, not full retrieval.",
+      "callout": "Cue-driven",
+      "footer": "",
+      "bullets": [],
+      "color": "#37f28a"
+    },
+    {
+      "type": "plain",
+      "label": "Slide 4",
+      "title": "Why remembering helps more",
+      "accent": "plain",
+      "body": "Retrieval strengthens memory, reveals gaps, and improves transfer to new problems.",
+      "callout": "Testing beats rereading",
+      "footer": "",
+      "bullets": [],
+      "color": "#ffd83d"
+    },
+    {
+      "type": "plain",
+      "label": "Slide 5",
+      "title": "When recognition is enough",
+      "accent": "plain",
+      "body": "Quick scans, multiple-choice elimination, or initial exposure can use recognition efficiently.",
+      "callout": "Use it sparingly",
+      "footer": "",
+      "bullets": [],
+      "color": "#ff4da6"
+    },
+    {
+      "type": "plain",
+      "label": "Slide 6",
+      "title": "Shift recognition into remembering",
+      "accent": "plain",
+      "body": "Try these practical steps:",
+      "callout": "Start small, be consistent",
+      "footer": "",
+      "bullets": [
+        "Close-book free recall",
+        "Make answer before checking",
+        "Spaced retrieval sessions",
+        "Simulate real problems"
+      ],
+      "color": "#37f28a"
+    },
+    {
+      "type": "final",
+      "label": "Final",
+      "title": "Final takeaway",
+      "accent": "bold",
+      "body": "Train retrieval, not familiarity. Practice closed-book recall to make knowledge usable under pressure.",
+      "callout": "Try a 10-minute recall now",
+      "footer": "Discuss: How will you practice this?",
+      "bullets": [],
+      "color": "#ffd83d"
+    }
+  ],
+  "caption": "Quick practice (3 steps): 1) Read a paragraph. 2) Close the book and write everything you recall for 5–10 minutes. 3) Check errors, then repeat spaced sessions. Save this to use next study session. What topic will you try this on? Comment below. #VectusLern #studyhacks #retrievalpractice #spacedrepetition #memory #metacognition #students #learning AI-assisted content. Reviewed by Vectus Lern."
+}

@@ -1,10 +1,15 @@
 {
   "id": "2026-09-01-repair-mistakes-fast",
   "title": "You Got It Wrong. Now Do This.",
-  "status": "draft",
+  "status": "approved",
   "template": "vectus-carousel",
-  "platforms": ["instagram"],
-  "format": { "width": 1080, "height": 1080 },
+  "platforms": [
+    "instagram"
+  ],
+  "format": {
+    "width": 1080,
+    "height": 1080
+  },
   "language": "en",
   "createdAt": "2026-09-01",
   "publishedAt": null,
@@ -12,5 +17,6 @@
   "hook": "You got it wrong. Good. Now do this before your brain wastes the mistake.",
   "cta": "Save this five-minute mistake repair loop.",
   "owners": [],
-  "notes": "Seven-slide English carousel. Human review required before publishing."
+  "notes": "Seven-slide English carousel. Human review required before publishing.",
+  "approvedAt": "2026-09-02T10:29:47.887Z"
 }

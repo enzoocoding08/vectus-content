@@ -1,7 +1,7 @@
 {
   "id": "2026-09-01-mix-practice-problems",
   "title": "Stop Practising One Type at a Time",
-  "status": "draft",
+  "status": "approved",
   "template": "vectus-carousel",
   "platforms": [
     "instagram"
@@ -17,5 +17,6 @@
   "hook": "Repeating one problem type feels efficient. It may be teaching you to follow a pattern, not choose a method.",
   "cta": "Save this mixed-practice recipe for your next problem set.",
   "owners": [],
-  "notes": "Seven-slide English carousel. Human review required before publishing."
+  "notes": "Seven-slide English carousel. Human review required before publishing.",
+  "approvedAt": "2026-09-02T10:29:47.924Z"
 }

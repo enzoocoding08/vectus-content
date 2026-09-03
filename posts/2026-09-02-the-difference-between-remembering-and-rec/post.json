@@ -1,7 +1,7 @@
 {
   "id": "2026-09-02-the-difference-between-remembering-and-rec",
   "title": "Remembering vs Recognizing",
-  "status": "approved",
+  "status": "published",
   "template": "vectus-carousel",
   "platforms": [
     "instagram"
@@ -12,11 +12,13 @@
   },
   "language": "en",
   "createdAt": "2026-09-02",
-  "publishedAt": null,
+  "publishedAt": "2026-09-03T09:36:28+0000",
   "contentPillar": "learning-aha",
   "hook": "Learn the crucial difference that changes how you study.",
   "cta": "Try a 10-minute recall after this carousel",
   "owners": [],
   "notes": "Generated automatically. Human review required before publishing.",
-  "approvedAt": "2026-09-02T10:55:29.955Z"
+  "approvedAt": "2026-09-02T10:55:29.955Z",
+  "instagramMediaId": "17969445975138953",
+  "instagramPermalink": "https://www.instagram.com/p/Dc0gSmXk4tq/"
 }

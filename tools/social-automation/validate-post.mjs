@@ -1,4 +1,3 @@
-import { execFileSync } from "node:child_process";
 import { access, readFile, readdir } from "node:fs/promises";
 import { join, relative } from "node:path";
 import { postPath, root } from "./lib.mjs";
@@ -11,10 +10,12 @@ const files = (await readdir(finalDir)).filter((name) => /^slide-\d+\.png$/.test
 if (files.length < 6 || files.length > 10) throw new Error(`Expected 6-10 slides, found ${files.length}`);
 
 for (const file of files) {
-  const dimensions = execFileSync("ffprobe", [
-    "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height",
-    "-of", "csv=s=x:p=0", join(finalDir, file),
-  ], { encoding: "utf8" }).trim();
+  const png = await readFile(join(finalDir, file));
+  const signature = png.subarray(0, 8).toString("hex");
+  if (signature !== "89504e470d0a1a0a" || png.subarray(12, 16).toString("ascii") !== "IHDR") {
+    throw new Error(`${file}: invalid PNG file`);
+  }
+  const dimensions = `${png.readUInt32BE(16)}x${png.readUInt32BE(20)}`;
   if (dimensions !== "1080x1080") throw new Error(`${file}: expected 1080x1080, got ${dimensions}`);
 }
 

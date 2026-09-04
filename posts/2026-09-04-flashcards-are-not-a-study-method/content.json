@@ -1,0 +1,16 @@
+{
+  "title":"Flashcards Are Not a Study Method",
+  "hook":"Flashcards are not a study method.",
+  "cta":"What makes a flashcard useful to you?",
+  "contentPillar":"provocative-education",
+  "slides":[
+    {"type":"cover","label":"STUDY COURT #02","title":"FLASHCARDS ARE NOT","accent":"A STUDY METHOD.","body":"They are a tool. What you ask your brain to do with them decides whether you learn.","callout":"OVERRATED — OR JUST MISUSED? →","footer":"THE COURT IS NOW IN SESSION","bullets":[],"color":"#ffd83d"},
+    {"type":"plain","label":"THE ACCUSATION","title":"Most cards test","accent":"recognition.","body":"You see a familiar prompt, flip quickly, and think: “I knew that.” Familiarity can feel like knowledge without proving recall.","callout":"FAMILIAR ≠ RETRIEVABLE","footer":"","bullets":[],"color":"#ff4da6"},
+    {"type":"plain","label":"THE EVIDENCE","title":"The flip speed","accent":"changes the test.","body":"Flip immediately and the answer becomes a recognition cue. Wait, retrieve, and explain first—and the card becomes active practice.","callout":"PAUSE → RECALL → REVEAL","footer":"","bullets":[],"color":"#37f28a"},
+    {"type":"plain","label":"BAD CARD","title":"One word in.","accent":"One word out.","body":"Tiny fact pairs can help with vocabulary. But they often hide relationships, reasoning, and when an idea should be used.","callout":"A CORRECT WORD IS NOT ALWAYS UNDERSTANDING","footer":"","bullets":[],"color":"#ffd83d"},
+    {"type":"plain","label":"BETTER CARD","title":"Make your brain","accent":"produce more.","body":"Ask for an explanation, an example, a comparison, or the next step in a problem—before looking at the answer.","callout":"EXPLAIN → APPLY → CHECK","footer":"","bullets":[],"color":"#37f28a"},
+    {"type":"plain","label":"THE DEFENSE","title":"Flashcards can be","accent":"excellent.","body":"They make retrieval repeatable and easy to space. The problem is not the card—it is passive use and shallow prompts.","callout":"GOOD TOOL. NOT AUTOMATICALLY GOOD LEARNING.","footer":"","bullets":[],"color":"#ff4da6"},
+    {"type":"plain","label":"THE VERDICT","title":"Do not count","accent":"cards reviewed.","body":"Count what you can retrieve, explain, and use without seeing the back. That is the performance that matters.","callout":"MEASURE RETRIEVAL, NOT SWIPES","footer":"","bullets":[],"color":"#ffd83d"},
+    {"type":"final","label":"THE JURY","title":"Overrated—","accent":"or just misused?","body":"What makes a flashcard genuinely useful to you?","callout":"DROP YOUR VERDICT BELOW","footer":"SAVE THIS BEFORE YOUR NEXT REVIEW","bullets":[],"color":"#37f28a"}
+  ]
+}
